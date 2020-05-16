@@ -2,10 +2,12 @@
 // Import all components to export them for easy access from parent components
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import Hero from "./Hero";
 
 export {
     Footer,
     Navbar,
+    Hero,
 };
 
 /** 
