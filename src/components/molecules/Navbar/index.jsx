@@ -16,7 +16,7 @@ import {
 } from "mdbreact";
 
 // React Logo
-import Logo from '../../../assets/logo-blue.png';
+import Logo from '../../../assets/logo-white.png';
 
 class Navbar extends React.Component{
     state = {
@@ -45,13 +45,14 @@ class Navbar extends React.Component{
         const { collapseID } = this.state;
         return(
             <div>
-                <MDBNavbar color="white" light expand="md" fixed="top" scrolling>
+                <MDBNavbar color="blue-gradient" light expand="md" fixed="top" scrolling>
                 <MDBContainer>
                     <MDBNavbarBrand href="/" className="py-0 font-weight-bold">
                     <img src={Logo} style={{ height: "2rem", width: "2rem" }}></img>
-                    <strong className="align-middle">Petschnig Schmetsching sag ich immer</strong>
+                    <strong className="align-middle white-text"> Petschnig Schmetsching sag ich immer</strong>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler
+                    tag="button" className="blue-gradient"
                     onClick={this.toggleCollapse("mainNavbarCollapse")}
                     />
                     <MDBCollapse
@@ -59,9 +60,10 @@ class Navbar extends React.Component{
                     isOpen={this.state.collapseID}
                     navbar
                     >
-                    <MDBNavbarNav right>
+                    <MDBNavbarNav right className="blue-gradient">
                         <MDBNavItem>
                             <MDBNavLink
+                                className="white-text"
                                 exact
                                 to="/"
                                 onClick={this.closeCollapse("mainNavbarCollapse")}
@@ -69,7 +71,7 @@ class Navbar extends React.Component{
                                 <strong>Home</strong>
                             </MDBNavLink>
                         </MDBNavItem>
-                    </MDBNavbarNav>
+                    </MDBNavbarNav>  
                     </MDBCollapse>
                 </MDBContainer>
             </MDBNavbar>
