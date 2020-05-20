@@ -13,6 +13,10 @@ import {
   Footer,
   Navbar,
 } from "./components/molecules";
+
+import {
+  Gallery
+} from "./components/organisms";
 // Routes
 import Routes from "./Routes";
 
@@ -25,6 +29,7 @@ class App extends React.Component {
           <main>
             <Routes />
           </main>
+          <Gallery />
           <Footer />
         </div>
       </Router>
