@@ -1,11 +1,9 @@
 //> React
 // Contains all the functionality necessary to define React components
 import React from "react";
-
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 import {
-  MDBEdgeHeader,
   MDBFreeBird,
   MDBContainer,
   MDBCol,
@@ -41,6 +39,7 @@ import Lol from "../../../assets/lol.png";
 
 //> CSS
 import "./HomePage.scss";
+import "./scrollbar.scss";
 
 class HomePage extends React.Component {
   render() {
@@ -81,7 +80,6 @@ class HomePage extends React.Component {
 
                     </div>
                     </div>
-
                   <MDBRow />
                   <p>React Bootstrap with Material Design</p>
                   <p className="pb-4">
@@ -218,11 +216,12 @@ class HomePage extends React.Component {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
-        </div>
+          </div>
       </>
     );
   }
 }
+
 
 export default HomePage;
 
