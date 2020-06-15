@@ -18,6 +18,14 @@ import {
 // React Logo
 import Logo from '../../../assets/logo-white.png';
 
+//> Data
+const value = {
+    navbar: {
+        pic: Logo,
+        title: " Petschnig Schmetsching sag ich immer",
+    },
+};
+
 class Navbar extends React.Component{
     state = {
         collapseID: ""
@@ -48,8 +56,8 @@ class Navbar extends React.Component{
                 <MDBNavbar color="blue-gradient" light expand="md" fixed="top" scrolling>
                 <MDBContainer>
                     <MDBNavbarBrand href="/" className="py-0 font-weight-bold">
-                    <img src={Logo} style={{ height: "2rem", width: "2rem" }}></img>
-                    <strong className="align-middle white-text"> Petschnig Schmetsching sag ich immer</strong>
+                    <img src={value.navbar.pic} style={{ height: "2rem", width: "2rem" }}></img>
+                    <strong className="align-middle white-text">{value.navbar.title}</strong>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler
                     tag="button" className="blue-gradient"

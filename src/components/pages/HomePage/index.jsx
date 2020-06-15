@@ -29,9 +29,9 @@ import {
 // Image of someone coding
 import Projects from "../../../assets/content/projects.jpg";
 // Carboard Image left
-import Profile from "../../../assets/serious.png";
+import profile from "../../../assets/serious.png";
 // Cardboard Image Right
-import Profile2 from "../../../assets/chill.png";
+import profile2 from "../../../assets/chill.png";
 // Image of the Steam Logo
 import Steam from "../../../assets/steam.png";
 // Image of the Lol Logo
@@ -40,6 +40,66 @@ import Lol from "../../../assets/lol.png";
 //> CSS
 import "./HomePage.scss";
 import "./scrollbar.scss";
+
+//> Data
+const value = {
+  about: {
+      f_pic: profile,
+      s_pic: profile2,
+      f_text: "Here is my super duper serious business of doom text",
+      s_text: "Here is my super duper weeb/gaming story of my life text",
+      f_maintext: "Hello i am a text",
+      s_maintext: "Hello i am a text",
+      f_link: "https://angelo.world",
+      s_link: "https://angelo.world",
+      f_descr: "School Projects",
+      s_descr: "Official Documentation",
+      
+      icons1: [
+          {
+            value: (
+              <a class="px-2 fa-lg li-ic"><i class="fab fa-github"></i></a>      
+            ),
+          },
+          {
+            value: (
+              <a class="px-2 fa-lg tw-ic"><i class="fab fa-react"></i></a>
+            ),
+          },
+          {
+            value: (
+              <a class="px-2 fa-lg fb-ic"><i class="fab fa-linkedin-in"></i></a>
+            ),
+          },
+        ],
+
+        icons2: [
+          {
+            value: (
+              <a class="px-2 fa-lg li-ic"><i class="fab fa-adobe"></i></a>
+            ),
+          },
+          {
+            value: (
+              <a class="px-2 fa-lg fb-ic">
+                <i class="fab">
+                  <img src={Steam} height="20" width="20"></img>
+                </i>
+              </a>
+            ),
+          },
+          {
+            value: (
+              <a class="px-2 fa-lg fb-ic">
+                <i class="fab">
+                  <img src={Lol} height="20" width="20"></img>
+                </i>
+              </a> 
+            ),
+          },
+        ],  
+  },
+};
 
 class HomePage extends React.Component {
   render() {
@@ -58,7 +118,7 @@ class HomePage extends React.Component {
                     <div class="card card-cascade wider">
 
                     <div class="view view-cascade overlay">
-                      <img class="card-img-top" src={Profile} alt="Profile"></img>
+                      <img class="card-img-top" src={value.about.f_pic} alt="Profile"></img>
                       <a href="#!">
                         <div class="mask rgba-white-slight"></div>
                       </a>
@@ -69,32 +129,31 @@ class HomePage extends React.Component {
 
                       <h4 class="blue-text pb-2"><strong>Work</strong></h4>
 
-                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam. </p>
+                      <p class="card-text">{value.about.f_text}</p>
 
-                      <a class="px-2 fa-lg li-ic"><i class="fab fa-github"></i></a>
-
-                      <a class="px-2 fa-lg tw-ic"><i class="fab fa-react"></i></a>
-
-                      <a class="px-2 fa-lg fb-ic"><i class="fab fa-linkedin-in"></i></a>
-
+                      {value.about.icons1.map((icon1, i) => {
+                      return (
+                        <>
+                        {icon1.value}
+                        </>
+                      );
+                      })}
                     </div>
                     </div>
                   <MDBRow />
-                  <p>React Bootstrap with Material Design</p>
+                  <p>{value.about.f_title}</p>
                   <p className="pb-4">
-                    This application shows the actual use of MDB React
-                    components in the application.
+                    {value.about.f_maintext}
                   </p>
                   <MDBRow className="d-flex flex-row justify-content-center row">
                     <a
                       className="blue-gradient border nav-link border-light rounded mr-1"
-                      href="https://angelo.world"
+                      href={value.about.f_link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <MDBIcon icon="graduation-cap white-text" className="mr-2" />
-                      <span className="font-weight-bold white-text">School Projects</span>
+                      <span className="font-weight-bold white-text">{value.about.f_descr}</span>
                     </a>
                   </MDBRow>
                 </MDBCardBody>
@@ -109,7 +168,7 @@ class HomePage extends React.Component {
                     <div class="card card-cascade wider">
 
                     <div class="view view-cascade overlay">
-                      <img class="card-img-top" src={Profile2} alt="Profile"></img>
+                      <img class="card-img-top" src={value.about.s_pic} alt="Profile"></img>
                       <a href="#!">
                         <div class="mask rgba-white-slight"></div>
                       </a>
@@ -120,41 +179,33 @@ class HomePage extends React.Component {
 
                       <h4 class="blue-text pb-2"><strong>Free Time</strong></h4>
 
-                      <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam. </p>
+                      <p class="card-text">{value.about.s_text}</p>
 
-                      <a class="px-2 fa-lg li-ic"><i class="fab fa-adobe"></i></a>
-
-                      <a class="px-2 fa-lg fb-ic">
-                        <i class="fab">
-                          <img src={Steam} height="20" width="20"></img>
-                          </i>
-                      </a>
-
-                      <a class="px-2 fa-lg fb-ic">
-                        <i class="fab">
-                          <img src={Lol} height="20" width="20"></img>
-                          </i>
-                      </a>
+                      {value.about.icons2.map((icon2, i) => {
+                      return (
+                        <>
+                        {icon2.value}
+                        </>
+                      );
+                      })}
 
                     </div>
                     </div>
 
                   <MDBRow />
-                  <p>React Bootstrap with Material Design</p>
+                  <p>{value.about.s_title}</p>
                   <p className="pb-4">
-                    This application shows the actual use of MDB React
-                    components in the application.
+                  {value.about.f_maintext}
                   </p>
                   <MDBRow className="d-flex flex-row justify-content-center row">
                     <a
                       className="blue-gradient border nav-link border-light rounded mr-1"
-                      href="https://mdbootstrap.com/react/"
+                      href={value.about.s_link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <MDBIcon icon="graduation-cap white-text" className="mr-2" />
-                      <span className="font-weight-bold white-text">Official Documentation</span>
+                      <span className="font-weight-bold white-text">{value.about.s_descr}</span>
                     </a>
                   </MDBRow>
                 </MDBCardBody>
